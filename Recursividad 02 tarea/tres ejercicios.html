@@ -1,0 +1,82 @@
+<script>
+//lista a encontrar el mayor
+document.write ("NÚMERO MAYOR" );
+ document.write ( "<br>" );
+var lista=[  1, 2, 3, 4, 5, 6, 8, 9,];
+
+//llamada inicial: suponemos que el mayor es el primero 
+//y analizamos a partir del segundo elemento de la lista
+//con esta construcción se falla para los vectores sin elementos
+
+
+function mayor(m,i){
+        // si ya estamos al final dela lista, tenemos el mayor
+        if (i>=lista.length) return m;
+        //si el analizado es mayor, cambiamos el que pasamos como mayor
+        if (lista[i]>m) return mayor(lista[i],i+1);
+        //o seguimos considerando el mismo mayor
+        else return mayor(m,i+1);
+}
+
+document.write ("el mayor es : "+ mayor(lista[0],1) + "<br>" );
+ document.write ( "<br>" );
+//////////////////////////////////////////////////////////
+
+//lista a encontrar el menor
+document.write ("NÚMERO MENOR:");
+ document.write ( "<br>" );
+var lista1 = [ 31,  32, 28, 2, 1, 3 ];
+
+var menor = lista1[0];
+
+for (var i = 0; i < lista1.length ; i++) { //empezamos desde la 2da posicion ya que el primero se deduce ser el menor hasta el momento 
+    if (lista1[i] < menor ) { //preguntamos si el proximo elemento de nuestro array (posicion i) es menor que el menor
+        menor  = lista1[i];// si se cumple la condicion reemplazamos el valor de menor por el valor que se encuentra en nuestro array en la posicion i 
+    }
+}
+
+document.write("El menor es : "+ menor + "<br>" );
+ document.write ( "<br>" );
+  //una vez finalizado el recorrido y encontrado el menor valor lo mostramos por pantalla
+
+
+//////////////////////////////////////////////////////////
+//Promedio
+document.write ("PROMEDIO");
+ document.write ( "<br>" );
+
+var lista2 = [0,1,2,3,4,5,6,7,8,9];
+
+function sumatoria ( lista2 ){
+  if ( lista2.length === 0){
+    return 0;
+  } else{
+    const [first, ...rest] = lista2;
+    return first + sumatoria ( rest );
+  }
+}
+
+function conteo ( lista2 ){
+  if ( lista2.length === 0){
+    return 0;
+  } else{
+    const [first, ...rest] = lista2;
+    return 1 + conteo ( rest );
+  }
+}
+
+
+
+
+respuesta = sumatoria (lista2) / conteo (lista2) ;
+
+document.write( "Promedio total = " + respuesta);
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+function texto ( cadena ){
+  document.write (cadena);
+}
+
+function salto (numero){
+  for (let i = 0; i < numero; i++){
+    document.write( "<br>");
+  }
+}
+
+//se define una lista constante
+const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
+
+//Iteración
+let acc = 0;
+for ( let i = 0; i < nums.length; i++){
+  acc += nums[i];
+}
+
+texto("sumatoria elementos de la lista = " + acc);
+
+</script>	
