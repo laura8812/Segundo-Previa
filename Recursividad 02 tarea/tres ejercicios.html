@@ -23,19 +23,20 @@ document.write ("el mayor es : "+ mayor(lista[0],1) + "<br>" );
 //////////////////////////////////////////////////////////
 
 //lista a encontrar el menor
-document.write ("NÚMERO MENOR:");
+ddocument.write ("NÚMERO MENOR:");
  document.write ( "<br>" );
-var lista1 = [ 31,  32, 28, 2, 1, 3 ];
+var lista=[  4, 2,  7, 5,  8, 9,];
 
-var menor = lista1[0];
-
-for (var i = 0; i < lista1.length ; i++) { //empezamos desde la 2da posicion ya que el primero se deduce ser el menor hasta el momento 
-    if (lista1[i] < menor ) { //preguntamos si el proximo elemento de nuestro array (posicion i) es menor que el menor
-        menor  = lista1[i];// si se cumple la condicion reemplazamos el valor de menor por el valor que se encuentra en nuestro array en la posicion i 
-    }
+function menor(m,i){
+      
+        if (i>=lista.length) return m;
+       
+        if (lista[i]<m) return menor(lista[i],i+1);
+   
+        else return menor(m,i+1);
 }
 
-document.write("El menor es : "+ menor + "<br>" );
+document.write("El menor es : "+ menor(lista[0],1) + "<br>" );
  document.write ( "<br>" );
   //una vez finalizado el recorrido y encontrado el menor valor lo mostramos por pantalla
 
